@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%block head%}
+{%  endblock  %}
+
+{% block  body  %}
+
+<h1>Find Object</h1>
+    {{object}}
+
+<p>
+
+  
+    <img src="{{ url_for('upload_objects', filename=file) }}" style="width: 500px">
+    
+
+</p>
+
+
+
+
+<form   method="post"> 
+    <input type="submit" value="Find New Object" , name="Find_New">
+{% endblock  %}

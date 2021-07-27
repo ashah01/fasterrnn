@@ -1,0 +1,39 @@
+  
+{%extends 'base.html'%}
+
+{%block head%}
+{%  endblock  %}
+
+{% block  body  %}
+<h1>File Upload</h1>
+<form method="POST" action="/" enctype="multipart/form-data">
+  <p><input type="file" name="file"></p>
+  <p><input type="submit" value="Submit"></p>
+</form>
+
+{% for file in files %}
+  <img src="{{ url_for('upload', filename=file) }}" style="width: 500px">
+{%  endfor %}
+
+<p>
+<form  action="/find_object" method="post"> 
+  <label for="find">Choose an object:</label>
+
+      <select name="objects">
+
+          {% for object in objects_list %}
+              <option value={{object}}>{{object}}</option>
+          {%  endfor %}
+          <p><input type="submit" value="Find object" , name="submit_button"></p>
+      </select>
+</p>
+<h>Objects</h>
+<p>
+{% for object_file in object_files %}
+  <img src="{{ url_for('upload_objects', filename=object_file) }}" style="width: 500px">
+
+</p>
+{%  endfor %}
+
+
+{% endblock  %}
