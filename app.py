@@ -14,7 +14,6 @@ from torchvision import  transforms
 import torch
 from torch import no_grad
 
-import cv2
 import numpy as np
 from PIL import Image
 
