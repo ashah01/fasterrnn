@@ -1,3 +1,8 @@
-FROM ubuntu:18.04
-RUN pip3 install -r requirements.txt
-CMD python3 ./app.py
+FROM python:3
+
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+CMD [ "python", "./app.py" ]
